@@ -10,9 +10,7 @@ $git_status\
 $nodejs\
 [](fg:#103c9a bg:#0750a6)\
 $docker_context\
-[](fg:#0750a6 bg:#0064b2)\
-$time\
-[](fg:#0064b2)\
+[](fg:#0750a6)\
 $cmd_duration\
 $line_break\
 $character"""
