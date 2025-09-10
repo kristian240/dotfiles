@@ -11,7 +11,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git z zsh-autosuggestions)
+plugins=(git z)
 
 . $ZSH/oh-my-zsh.sh
 
@@ -83,3 +83,6 @@ function command_not_found_handler() {
 }
 
 # CUSTOM COMMAND HANDLER END
+
+# 3rd party zsh plugins
+. $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

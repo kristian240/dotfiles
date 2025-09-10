@@ -5,5 +5,11 @@
 2. Install all packages
 
 ```bash
-brew install < .dotifles/.brewlist
+xargs brew install < .dotfiles/.brewlist
+```
+
+3. Add oh-my-zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
