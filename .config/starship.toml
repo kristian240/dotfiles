@@ -34,8 +34,7 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [cmd_duration]
-format = "[◄ $duration ](italic white)"
-min_time = 0
+format = "[ $duration ](italic white)"
 
 
 # Here is how you can shorten some long paths by text replacement
