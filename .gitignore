@@ -3,6 +3,8 @@
 !.gitconfig
 !.zshrc
 !README.md
+!.config
+!.config/starship.toml
 
 !.dotfiles
 !.dotfiles/*
