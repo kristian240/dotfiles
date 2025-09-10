@@ -1,9 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes_
-ZSH_THEME="robbyrussell"
-
 # Settings
 DISABLE_UPDATE_PROMPT="true"
 HIST_STAMPS="dd.mm.yyyy"
@@ -11,7 +8,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git z)
+plugins=(git z starship)
 
 . $ZSH/oh-my-zsh.sh
 
@@ -30,7 +27,6 @@ export CFLAGS="-I/usr/local/Cellar/openssl@1.1/1.1.1i/include"
 # Paths
 launchctl setenv PATH $PATH
 
-eval "$(starship init zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # eval "$(pyenv init --path)"
 
@@ -62,7 +58,7 @@ function handle_unknown_command() {
     # If the command does not exist, prompt the user for a mapping
     echo "Command '$command' not found. Please provide the command to map it to:"
     read -r mapped_command
-
+_
     # Update the JSON with the new mapping
     updated_mappings=$(jq --arg dir "$current_dir" --arg cmd "$command" --arg map_cmd "$mapped_command" \
       '.[$dir][$cmd] = $map_cmd' "$mappings_file")
