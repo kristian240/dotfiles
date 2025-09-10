@@ -1,0 +1,29 @@
+prepend-path() {
+  [ -d $1 ] && PATH="$1:$PATH"
+}
+
+# Prepend new items to path (if directory exists)
+prepend-path "/opt/homebrew/Cellar/libpq/13.3/bin"
+prepend-path "/opt/homebrew/opt/libpq/bin"
+prepend-path "/usr/local/texlive/2023/bin/universal-darwin"
+prepend-path "~/.local/bin"
+prepend-path "/Applications/Postgres.app/Contents/Versions/latest/bin"
+
+# node manager
+export N_PREFIX=$HOME/.n
+prepend-path "$N_PREFIX/bin"
+
+# pnpm
+export PNPM_HOME="~/Library/pnpm"
+prepend-path "$PNPM_HOME"
+
+# Perl
+prepend-path "~/perl5/bin"
+PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="~/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"~/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=~/perl5"; export PERL_MM_OPT;
+
+launchctl setenv PATH $PATH
+
+export PATH

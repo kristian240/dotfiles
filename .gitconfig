@@ -1,0 +1,25 @@
+[core]
+	editor = code --wait
+[user]
+	email = kristian.djakovic2@gmail.com
+	name = Kristian Djaković
+[push]
+	default = current
+[init]
+	defaultBranch = master
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+	recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:blue)%(refname:short)%(color:reset) %(color:white)%(committerdate:relative)%(color:reset)'
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[maintenance]
+	auto = true
+[merge]
+	no-edit = true

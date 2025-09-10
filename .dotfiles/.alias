@@ -1,0 +1,7 @@
+alias zshconfig="code ~/.zshrc"
+alias gai="git add -i"
+alias myip="curl https://ifconfig.co/ip"
+alias gcd="git checkout develop"
+alias gwork="git log --pretty=\"%ad - %S -  %s.\" --author=\"Kristian Djaković\" --all --since=2023-04-23 --author-date-order"
+alias python="python3"
+alias y="yarn"
