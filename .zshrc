@@ -81,4 +81,6 @@ function command_not_found_handler() {
 # CUSTOM COMMAND HANDLER END
 
 # 3rd party zsh plugins
+. $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 . $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+. $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

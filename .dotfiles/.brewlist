@@ -9,4 +9,6 @@ node
 obsidian
 starship
 visual-studio-code
+zsh-autocomplete
 zsh-autosuggestions
+zsh-syntax-highlighting
