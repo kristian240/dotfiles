@@ -23,3 +23,5 @@
 	auto = true
 [merge]
 	no-edit = true
+[rebase]
+	updateRefs = true

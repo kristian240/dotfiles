@@ -1,71 +1,66 @@
-format = """
-[](#2b0076)\
-$username\
-[](bg:#221482 fg:#2b0076)\
-$directory\
-[](fg:#221482 bg:#19288e)\
-$git_branch\
-$git_status\
-[](fg:#19288e bg:#103c9a)\
-$nodejs\
-[](fg:#103c9a bg:#0750a6)\
-$docker_context\
-[](fg:#0750a6)\
-$cmd_duration\
-$line_break\
-$character"""
+format = """"""
+right_format = """$git_branch $directory $cmd_duration"""
 
-[character]
-success_symbol = "[❯](#2b0076)"
-
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
 [username]
-show_always = true
-style_user = "bg:#2b0076 fg:#ffffff"
-style_root = "bg:#2b0076 fg:#ffffff"
-format = '[$user ]($style)'
-disabled = false
+show_always = false
 
 [directory]
-style = "bg:#221482 fg:#ffffff"
-format = "[ $path ]($style)"
+style = "fg:#22aa77 bold"
+format = "[$path]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
+truncate_to_repo = false
 
 [cmd_duration]
 format = "[ $duration ](italic white)"
 
-
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"propsmadness" = "pm"
 
 [docker_context]
 symbol = " "
-style = "bg:#0750a6 fg:#ffffff"
+style = " fg:#ffffff"
 format = '[ $symbol $context ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#19288e fg:#ffffff"
-format = '[ $symbol $branch ]($style)'
+style = " fg:#22aa77"
+format = '[$branch]($style)'
+ignore_branches = ["main"]
 
 [git_status]
-style = "bg:#19288e fg:#ffffff"
+style = " fg:#ffffff"
 format = '[$all_status$ahead_behind ]($style)'
 
-[nodejs]
-symbol = ""
-style = "bg:#103c9a fg:#ffffff"
-format = '[ $symbol ($version) ]($style)'
+[profiles]
+claude-code = "$claude_model$claude_context$directory"
 
-[time]
-disabled = false
-time_format = "%R"              # Hour:Minute Format
-style = "bg:#0064b2 fg:#ffffff"
-format = '[ ♥ $time ]($style)'
+[claude_model]
+format = "[$model]($style) "
+style = "fg:#22aa77"
+
+[claude_context]
+style = "bold fg:#22aa77"
+format = "[$input_tokens]($style) "
+gauge_width = 10
+
+[[claude_context.display]]
+threshold = 0
+style = "bold fg:#22aa77"
+hidden = false
+
+[[claude_context.display]]
+threshold = 30
+style = "bold fg:#22aa77"
+
+[[claude_context.display]]
+threshold = 60
+style = "bold fg:#22aa77"
+
+[[claude_context.display]]
+threshold = 80
+style = "bold fg:#22aa77"
